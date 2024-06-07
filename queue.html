@@ -13,7 +13,7 @@
 
 
     <div class="Queue flex flex-col w-full items-end">
-        <div class="menu-button border border-[#06B0E5] rounded-md bg-[#A7EAFF] h-fit w-fit mr-4 mt-4">
+        <div id="open-menu" class="menu-button border border-[#06B0E5] rounded-md bg-[#A7EAFF] h-fit w-fit mr-4 mt-4">
             <img src="./assets/Menu.png" />
         </div>
 
@@ -139,6 +139,34 @@
         </div>
     </div>
 
+    <div id="body-overlay"></div>
+    <nav class="real-menu " role="navigation">
+      <img src="./assets/Menu.png" class=" ml-auto p-4" />
+  
+      <div class=" flex flex-col gap-2 items-center text-[#4E4E4E] text-center mt-8">
+        <p class="border-y w-full border-solid border-[#72DDFF] py-2">
+          صفحه اصلی
+        </p>
+        <p class="border-b w-full border-solid border-[#72DDFF] pb-2">
+          ورود/عضویت
+        </p>
+        <p class="border-b w-full border-solid border-[#72DDFF] pb-2">
+          نوبت آنلاین
+        </p>
+        <p class="border-b w-full border-solid border-[#72DDFF] pb-2">
+          نوبت من
+        </p>
+        <p class="border-b w-full border-solid border-[#72DDFF] pb-2">
+          پاداش
+        </p>
+        <p class="border-b w-full border-solid border-[#72DDFF] pb-2">
+          پشتیبانی
+        </p>
+      </div>
+    </nav>
+
+
+  <script src="./menuToggle.js"></script>
 
 </body>
 
