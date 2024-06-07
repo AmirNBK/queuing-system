@@ -6,7 +6,10 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet">
-    <title>Locations</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <title>Map locations</title>
 </head>
 
 <body>
@@ -20,9 +23,6 @@
 
 
         <div class="flex flex-col items-center mx-auto w-full mt-12">
-            <p class=" text-[#4E4E4E] mb-4">
-                از منزل نوبت خود را ثبت کنید
-            </p>
 
             <div class="relative w-9/12">
                 <input
@@ -35,20 +35,16 @@
             </div>
         </div>
 
-        <div class="mt-12 grid grid-cols-2 rtl gap-10 mx-auto">
-            <div class="flex flex-col items-center text-center gap-1">
-                <img src="./assets/Home.svg" class="rounded-md bg-[#A7EAFF] border p-[5px] border-[#06B0E5]" />
-                <p class="text-[#4E4E4E] text-xs"> خدمات الکترونیک قضایی </p>
-            </div>
-            <div class="flex flex-col items-center text-center gap-1">
-                <img src="./assets/Home.svg" class="rounded-md bg-[#A7EAFF] border p-[5px] border-[#06B0E5]" />
-                <p class="text-[#4E4E4E] text-xs"> بانک </p>
-            </div>
-            <div class="flex flex-col items-center text-center gap-1">
-                <img src="./assets/Home.svg" class="rounded-md bg-[#A7EAFF] border p-[5px] border-[#06B0E5]" />
-                <p class="text-[#4E4E4E] text-xs"> پلیس+10 </p>
-            </div>
+
+        <div class=" rounded-md bg-[#A7EAFF] border border-[#06B0E5] w-10/12 mx-auto mt-7 p-3">
+            <div class="rounded-md" id="map"></div>
         </div>
+
+        <button class="bg-[#FF7A7A] mb-6 border flex flex-row items-end gap-2 text-sm border-[#FC4141] menu-button rounded-lg p-[10px] mx-auto mt-4">
+            نزدیک ترین مکان
+            <img src="./assets/Location.svg"/>
+        </button>
+
     </div>
 
 
@@ -81,6 +77,17 @@
 
 
     <script src="./menuToggle.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([51.5, -0.09]).addTo(map);
+    </script>
 
 </body>
 

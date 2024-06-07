@@ -18,7 +18,7 @@
 }
 
 .rtl {
- direction: rtl; 
+  direction: rtl;
 }
 
 a {
@@ -36,7 +36,7 @@ a:hover {
   height: 100vh;
   display: none;
   position: fixed;
-  z-index: 3;
+  z-index: 3000000;
   top: 0;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.5);
@@ -46,7 +46,7 @@ a:hover {
   position: fixed;
   top: 0;
   right: -300px;
-  z-index: 4;
+  z-index: 3000001;
   width: 300px;
   height: 100%;
   /* padding: 0.5rem 1rem; */
@@ -61,6 +61,7 @@ a:hover {
 body.menu-open #body-overlay {
   display: block;
 }
+
 body.menu-open .real-menu {
   right: 0;
 }
@@ -71,6 +72,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #72DDFF;
+}
+
+#map {
+  height: 350px;
 }
 
 .menu-button {
